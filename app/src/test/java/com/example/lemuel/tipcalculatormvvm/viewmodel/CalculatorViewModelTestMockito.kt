@@ -31,8 +31,7 @@ class CalculatorViewModelTestMockito {
 
     @Before
     fun setup() {
-        /*
-        This initializes any member variables which had been annotated with the @mock making them mock objects*/
+        /*This initializes any member variables which had been annotated with the @mock making them mock objects*/
         MockitoAnnotations.initMocks(this)
 
         //ensures that we are evoking application.getString with the expected string resource
@@ -48,9 +47,7 @@ class CalculatorViewModelTestMockito {
     calls this function with any other numeric values, our test would fail
     */
     private fun stubResource(given: Double, returnStub: String) {
-        /*
-        given a double, returns an expected string resource
-        */
+        /*given a double, returns an expected string resource*/
         `when`(application.getString(R.string.dollar_amount, given)).thenReturn(returnStub)
     }
 
@@ -78,9 +75,7 @@ class CalculatorViewModelTestMockito {
     }
 
 
-    /*
-    verify viewmodel doesn't call calculate tip if inputs are invalid
-    */
+    /*verify viewmodel doesn't call calculate tip if inputs are invalid*/
     @Test
     fun testCalculateBadTipPercentage() {
         /*
@@ -100,9 +95,7 @@ class CalculatorViewModelTestMockito {
 
     @Test
     fun testCalculateBadCheckAmount() {
-        /*
-        validate that 'calculateTip is never called for any Double or Int if checkAmount is invalid
-        */
+        /*validate that 'calculateTip is never called for any Double or Int if checkAmount is invalid*/
         calculatorViewModel.inputCheckAmount = ""
         calculatorViewModel.inputPercentage = "15"
 

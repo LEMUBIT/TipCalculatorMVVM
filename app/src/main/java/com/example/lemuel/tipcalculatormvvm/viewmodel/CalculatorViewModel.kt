@@ -9,9 +9,7 @@ import com.example.lemuel.tipcalculatormvvm.R
 import com.example.lemuel.tipcalculatormvvm.model.RestaurantCalculator
 import com.example.lemuel.tipcalculatormvvm.model.TipCalculation
 
-/*
-has a constructor with default 'restaurantCalculator' value 'RestaurantCalculator()'
-*/
+/*has a constructor with default 'restaurantCalculator' value 'RestaurantCalculator()'*/
 class CalculatorViewModel(val app: Application, val restaurantCalculator: RestaurantCalculator = RestaurantCalculator()) : BaseObservable() {
 
     var inputCheckAmount = ""
@@ -23,7 +21,7 @@ class CalculatorViewModel(val app: Application, val restaurantCalculator: Restau
 
 
     init {
-        //set initial value of views to 0.00
+        /*set initial value of views to 0.00*/
         updateOutputs(TipCalculation())
     }
 
@@ -47,15 +45,13 @@ class CalculatorViewModel(val app: Application, val restaurantCalculator: Restau
 
     }
 
-    /*
-    uses Two way dataBinding to update Text views with variables*/
+    /*uses Two way dataBinding to update Text views with variables*/
     private fun clearInputs() {
 
         inputCheckAmount = "0.00"
         inputPercentage = "0"
 
-        /*
-        from Base Observable, used to update views after a change has occurred*/
+        /*from Base Observable, used to update views after a change has occurred*/
         notifyChange()
     }
 
