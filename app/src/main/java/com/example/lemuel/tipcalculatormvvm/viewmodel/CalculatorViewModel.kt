@@ -46,6 +46,7 @@ class CalculatorViewModel(val app: Application, val restaurantCalculator: Restau
     }
 
     /*uses Two way dataBinding to update Text views with variables*/
+    /*e.g @={vm.inputCheckAmount}, see XML*/
     private fun clearInputs() {
 
         inputCheckAmount = "0.00"
